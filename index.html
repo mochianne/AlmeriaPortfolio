@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marianne Gem D. Almeria - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <!-- Navbar -->
+<header class="navbar">
+  <div class="logo">Marianne Gem</div>
+  <!-- Hamburger button (hidden on desktop, shown only on mobile) -->
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  <nav class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-container">
+  <div class="hero-image">
+  <img src="images/profile.jpg" alt="Profile" class="profile-img">
+</div>
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Marianne Gem D. Almeria</span></h1>
+      <p class="tagline">Bachelor of Science in Computer Science | 3rd Year | De La Salle John Bosco</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <!-- Left: Profile Image -->
+    <div class="about-image">
+      <img src="images/profile.jpg" alt="Marianne Gem D. Almeria">
+    </div>
+
+    <!-- Right: Info -->
+    <div class="about-content">
+      <p class="intro">
+        I am <strong>Marianne Gem D. Almeria</strong>, a passionate developer and designer 
+        who loves creating modern, interactive, and user-friendly websites.  
+        My goal is to combine creativity and technology to bring ideas to life on the web.
+      </p>
+
+      <div class="about-details">
+        <h3>Personal Information</h3>
+        <div class="info-row"><span>Email:</span>mg.miee2@gmail.com</div>
+        <div class="info-row"><span>Contact Number:</span>09304467521</div>
+        <div class="info-row"><span>Date of Birth:</span>September 18, 2005</div>
+        <div class="info-row"><span>Address:</span>P1 Manggawong District, Mangagoy, Bislig City</div>
+
+        <h3>Family Background</h3>
+        <div class="info-row"><span>Father’s Name:</span> Arniel Almeria (Deceased)</div>
+        <div class="info-row"><span>Mother’s Name:</span> Gemma D. Almeria – Store Vendor (Sari-sari Store Owner)</div>
+        <div class="info-row"><span>Number of Siblings:</span> 3</div>
+        <div class="info-row"><span>Siblings:</span> Zedric D. Almeria, Mikko D. Almeria, Shandy Blaire D. Almeria</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="images/yangs.png" alt="Project 1">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio showcasing my skills and projects.</p>
+      <a href="https://your-link-to-portfolio.com" class="project-btn-blue">View Project</a>
+    </div>
+    <div class="project-card">
+      <img src="images/tarcker.png" alt="Project 2">
+      <h3>Expense Tracker</h3>
+      <p>A web app to track daily expenses and generate reports.</p>
+      <a href="https://your-link-to-expensetracker.com" class="project-btn-blue">View Project</a>
+    </div>
+    <div class="project-card">
+      <img src="images/yang.png" alt="Project 3">
+      <h3>Brew Side Website</h3>
+      <p>A coffee shop website with an interactive menu, cart, and order system.</p>
+      <a href="https://brewside.cs-soft-eng.com/index.php" class="project-btn-blue">View Project</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Get in touch with me through the following:</p>
+    <ul class="contact-info">
+      <li>Email: <a href="mailto:mg.miee2@gmail.com">mg.miee2@gmail.com</a></li>
+      <li>Phone: 09304467521
+</li>
+
+    </ul>
+  </section>
+<!-- ====== MY GRADES SECTION ====== -->
+<section id="my-grade" class="page-section">
+  <h2 class="section-title">Check Grades</h2>
+
+  <div class="grades-head">
+    <input id="id-input" type="search" inputmode="numeric" pattern="[0-9]*"
+           placeholder="Enter Student ID (e.g., 2340048)">
+    <button id="id-search" class="btn small">Search ID</button>
+  </div>
+
+  <p id="grade-status" class="grades-status">Type a student ID to see your grade.</p>
+
+  <div id="grade-result" class="grade-card" hidden>
+    <p><strong>Student ID:</strong> <span id="g-id"></span></p>
+    <p><strong>Last Name:</strong> <span id="g-ln"></span></p>
+    <p><strong>Midterm:</strong> <span id="g-mid"></span></p>
+    <p><strong>Final:</strong> <span id="g-fin"></span></p>
+  </div>
+</section>
+
+<style>
+/* ====== MY GRADES UNIQUE STYLE ====== */
+#my-grade {
+  background: linear-gradient(135deg, #e0f0ff, #c0e0ff);
+  padding: 40px 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+#my-grade .section-title {
+  color: #1E90FF;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.grades-head {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#id-input {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #1E90FF;
+  outline: none;
+  font-size: 1rem;
+  color: #1E90FF;
+  transition: all 0.3s ease;
+}
+
+#id-input:focus {
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+  border-color: #1E90FF;
+}
+
+#id-search {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #1E90FF;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#id-search:hover {
+  background: #0d6efd;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30,144,255,0.4);
+}
+
+.grades-status {
+  color: #1E90FF;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.grade-card {
+  background: #ffffff;
+  border: 2px solid #1E90FF;
+  border-radius: 12px;
+  padding: 20px;
+  color: #1E90FF;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(30,144,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grade-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30,144,255,0.3);
+}
+
+.grade-card p {
+  margin: 8px 0;
+}
+</style>
+
+  <!-- ====== JS for Grades (using your XML) ====== -->
+  <script>
+    const xmlData = `
+<response>
+<students>
+<student><student_id>2340054</student_id><student_lastname>ALBERIO</student_lastname><midterm_grade>2.5</midterm_grade><final_grade>2.0</final_grade></student>
+<student><student_id>2340012</student_id><student_lastname>ALMERIA</student_lastname><midterm_grade>2.5</midterm_grade><final_grade>2.0</final_grade></student>
+<student><student_id>2340108</student_id><student_lastname>BAYLOSIS</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
+<student><student_id>2340222</student_id><student_lastname>COMANDA</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
+<student><student_id>2340127</student_id><student_lastname>CUIMAN</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
+<student><student_id>2340048</student_id><student_lastname>DELFIN</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
+<student><student_id>2340144</student_id><student_lastname>GEREDA</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
+<student><student_id>2340085</student_id><student_lastname>GOMERA</student_lastname><midterm_grade>3.0</midterm_grade><final_grade>1.5</final_grade></student>
+<student><student_id>2340098</student_id><student_lastname>GUIAS</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
+<student><student_id>2340099</student_id><student_lastname>LACHICA</student_lastname><midterm_grade>5.0</midterm_grade><final_grade>1.0</final_grade></student>
+<student><student_id>2340058</student_id><student_lastname>PABELONIA</student_lastname><midterm_grade>5.0</midterm_grade><final_grade>1.0</final_grade></student>
+<student><student_id>2340204</student_id><student_lastname>PADILLA</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
+<student><student_id>2340101</student_id><student_lastname>REIN</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
+<student><student_id>2340084</student_id><student_lastname>TORREON</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
+<student><student_id>2340020</student_id><student_lastname>ZASPA</student_lastname><midterm_grade>3.0</midterm_grade><final_grade>1.5</final_grade></student>
+</students>
+</response>
+    `;
+
+    const statusEl = document.getElementById('grade-status');
+    const resultEl = document.getElementById('grade-result');
+    const idEl  = document.getElementById('g-id');
+    const lnEl  = document.getElementById('g-ln');
+    const midEl = document.getElementById('g-mid');
+    const finEl = document.getElementById('g-fin');
+
+    const idInput = document.getElementById('id-input');
+    const idSearchBtn = document.getElementById('id-search');
+
+    let lastRecord = null;
+
+    idSearchBtn.addEventListener('click', handleSearch);
+    idInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleSearch(); });
+
+    function handleSearch() {
+      const typed = idInput.value.trim();
+      if (!typed) {
+        statusEl.textContent = 'Please enter a student ID.';
+        return;
+      }
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(xmlData, 'application/xml');
+      const students = xml.querySelectorAll('student');
+      let rec = null;
+
+      students.forEach(s => {
+        const id = s.querySelector('student_id')?.textContent.trim();
+        if (id === typed) {
+          rec = {
+            id,
+            ln: s.querySelector('student_lastname')?.textContent.trim(),
+            mid: s.querySelector('midterm_grade')?.textContent.trim(),
+            fin: s.querySelector('final_grade')?.textContent.trim()
+          };
+        }
+      });
+
+      if (!rec) {
+        statusEl.textContent = '⚠️ No record found for ID ' + typed;
+        resultEl.hidden = true;
+        return;
+      }
+
+      idEl.textContent = rec.id;
+      lnEl.textContent = rec.ln;
+      midEl.textContent = rec.mid;
+      finEl.textContent = rec.fin;
+      resultEl.hidden = false;
+      statusEl.textContent = '✅ Grade loaded for ' + typed + '!';
+    }
+  </script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Marianne Gem D. Almeria. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Smooth Scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+          .scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
