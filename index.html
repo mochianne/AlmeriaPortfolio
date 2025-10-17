@@ -149,14 +149,14 @@ fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywe
 
 // ✅ Fetch Final Grade
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=rein&id_number=2340101'), true);
+xhr.open('GET', 'https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=almeria&id_number=2340012'), true);
 xhr.onload = function() {
     if (xhr.status === 200) {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
         const students = xmlDoc.getElementsByTagName('student');
         for (let student of students) {
-            if (student.getElementsByTagName('student_id')[0]?.textContent === '2340101') {
+            if (student.getElementsByTagName('student_id')[0]?.textContent === '2340012') {
                 const finalGrade = student.getElementsByTagName('final_grade')[0]?.textContent || 'N/A';
                 document.getElementById('final-grade').textContent = "Final: " + finalGrade;
             }
@@ -172,6 +172,7 @@ xhr.send();
 </script>
 </body>
 </html>
+
 
 
 
