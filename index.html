@@ -130,14 +130,14 @@ menuToggle.addEventListener("click", () => {
 });
 
 // ✅ Fetch Midterm Grade
-fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=rein&id_number=2340101'))
+fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=almeria&id_number=2340012'))
 .then(response => response.text())
 .then(data => {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(data, 'text/xml');
     const students = xmlDoc.getElementsByTagName('student');
     for (let student of students) {
-        if (student.getElementsByTagName('student_id')[0]?.textContent === '2340101') {
+        if (student.getElementsByTagName('student_id')[0]?.textContent === '2340012') {
             const midtermGrade = student.getElementsByTagName('midterm_grade')[0]?.textContent || 'N/A';
             document.getElementById('midterm-grade').textContent = "Midterm: " + midtermGrade;
         }
@@ -172,5 +172,6 @@ xhr.send();
 </script>
 </body>
 </html>
+
 
 
