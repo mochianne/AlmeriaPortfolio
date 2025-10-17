@@ -129,49 +129,37 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// ✅ Fetch Midterm Grade
+// ✅ Fetch Grades for Student ALMERIA
 fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=almeria&id_number=2340012'))
 .then(response => response.text())
 .then(data => {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(data, 'text/xml');
     const students = xmlDoc.getElementsByTagName('student');
+    
     for (let student of students) {
+        // Check if this student is ALMERIA (ID 2340012)
         if (student.getElementsByTagName('student_id')[0]?.textContent === '2340012') {
+            // Get Midterm and Final grades
             const midtermGrade = student.getElementsByTagName('midterm_grade')[0]?.textContent || 'N/A';
+            const finalGrade = student.getElementsByTagName('final_grade')[0]?.textContent || 'N/A';
+            
+            // Update the page with these grades
             document.getElementById('midterm-grade').textContent = "Midterm: " + midtermGrade;
+            document.getElementById('final-grade').textContent = "Final: " + finalGrade;
         }
     }
 })
 .catch(() => {
     document.getElementById('midterm-grade').textContent = 'Midterm: Error';
+    document.getElementById('final-grade').textContent = 'Final: Error';
 });
 
-// ✅ Fetch Final Grade
-const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=almeria&id_number=2340012'), true);
-xhr.onload = function() {
-    if (xhr.status === 200) {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
-        const students = xmlDoc.getElementsByTagName('student');
-        for (let student of students) {
-            if (student.getElementsByTagName('student_id')[0]?.textContent === '2340012') {
-                const finalGrade = student.getElementsByTagName('final_grade')[0]?.textContent || 'N/A';
-                document.getElementById('final-grade').textContent = "Final: " + finalGrade;
-            }
-        }
-    } else {
-        document.getElementById('final-grade').textContent = 'Final: Error';
-    }
-};
-xhr.onerror = function() {
-    document.getElementById('final-grade').textContent = 'Final: Error';
-};
 xhr.send();
 </script>
 </body>
 </html>
+
 
 
 
